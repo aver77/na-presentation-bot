@@ -1,0 +1,10 @@
+{
+  "name": "na-presentation-tg-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
