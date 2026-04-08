@@ -4,7 +4,13 @@ const { initServer } = require("./server");
 initServer();
 
 const token = process.env.BOT_TOKEN;
+if (!token) {
+    console.error("BOT_TOKEN не найден!");
+    process.exit(1);
+}
+
 const bot = new TelegramBot(token, { polling: true });
+console.log("Bot started ✅");
 
 // обработка команды /start
 bot.onText(/\/start/, (msg) => {
