@@ -1,13 +1,20 @@
 {
-  "name": "na-presentation-tg-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "bot.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "prettier": "^3.8.1"
-  }
+    "name": "na-presentation-tg-bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "bot.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "scripts": {
+        "init": "npm install",
+        "start": "node bot.js"
+    },
+    "devDependencies": {
+        "prettier": "^3.8.1"
+    },
+    "dependencies": {
+        "node-telegram-bot-api": "^0.67.0"
+    }
 }
