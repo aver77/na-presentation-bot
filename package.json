@@ -2,14 +2,14 @@
     "name": "na-presentation-tg-bot",
     "version": "1.0.0",
     "description": "",
-    "main": "bot.js",
+    "main": "src/bot.js",
     "keywords": [],
     "author": "",
     "license": "ISC",
     "type": "commonjs",
     "scripts": {
         "init": "npm install",
-        "start": "node bot.js"
+        "start": "node src/bot.js"
     },
     "devDependencies": {
         "prettier": "^3.8.1"
