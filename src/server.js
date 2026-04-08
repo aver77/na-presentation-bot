@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 
 // init web server (for Render)
 const initServer = () => {
