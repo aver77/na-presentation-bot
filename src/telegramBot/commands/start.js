@@ -1,5 +1,7 @@
-const handleCommands = (bot) => {
-    bot.onText(/\/start/, (msg) => {
+const START_COMMAND = "start";
+
+const listenToStartCommand = (bot) => {
+    bot.onText(new RegExp(`/${START_COMMAND}`), (msg) => {
         const chatId = msg.chat.id;
 
         bot.sendMessage(chatId, "🔗 My projects", {
@@ -7,19 +9,19 @@ const handleCommands = (bot) => {
                 inline_keyboard: [
                     [
                         {
-                            text: "🌐 Portfolio",
+                            text: "🎨 My portfolio",
                             web_app: { url: "https://naportfolio.space/" }
                         }
                     ],
                     [
                         {
-                            text: "✍️ Blog about IT",
+                            text: "🌐 Blog about IT",
                             web_app: { url: "https://nablog.tech/" }
                         }
                     ],
                     [
                         {
-                            text: "💬 INApp Chat [source code]",
+                            text: "💬 INApp Real-time Chat [source code]",
                             url: "https://github.com/orgs/INApp-team/repositories"
                         }
                     ],
@@ -60,5 +62,6 @@ const handleCommands = (bot) => {
 };
 
 module.exports = {
-    handleCommands
+    START_COMMAND,
+    listenToStartCommand
 };

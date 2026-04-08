@@ -1,5 +1,5 @@
 const TelegramBot = require("node-telegram-bot-api");
-const { handleCommands } = require("./handleCommands");
+const { handleCommands } = require("./commands");
 
 const token = process.env.BOT_TOKEN;
 if (!token) {
