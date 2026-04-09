@@ -1,4 +1,4 @@
-import TelegramBot from "node-telegram-bot-api";
+import type TelegramBot from "node-telegram-bot-api";
 import { PORTFOLIO_COMMAND } from "../constants";
 import { LOCALIZATIONS, REST_WORLD_CODE } from "../i18n";
 
