@@ -1,57 +1,60 @@
-const START_COMMAND = "start";
+import TelegramBot from "node-telegram-bot-api";
+import { START_COMMAND } from "../constants";
+import { LOCALIZATIONS, REST_WORLD_CODE } from "../i18n";
 
-const listenToStartCommand = (bot) => {
+export const listenToStartCommand = (bot: TelegramBot) => {
     bot.onText(new RegExp(`/${START_COMMAND}`), (msg) => {
-        const chatId = msg.chat.id;
+        const languageCode = msg.from?.language_code || REST_WORLD_CODE;
+        const i18n = LOCALIZATIONS[languageCode][START_COMMAND];
 
-        bot.sendMessage(chatId, "🔗 My projects", {
+        bot.sendMessage(msg.chat.id, i18n.commandText, {
             reply_markup: {
                 inline_keyboard: [
                     [
                         {
-                            text: "🎨 My portfolio",
+                            text: i18n.portfolio,
                             web_app: { url: "https://naportfolio.space/" }
                         }
                     ],
                     [
                         {
-                            text: "🌐 Blog about IT",
+                            text: i18n.itBlog,
                             web_app: { url: "https://nablog.tech/" }
                         }
                     ],
                     [
                         {
-                            text: "💬 INApp Real-time Chat [source code]",
+                            text: i18n.inAppChat,
                             url: "https://github.com/orgs/INApp-team/repositories"
                         }
                     ],
                     [
                         {
-                            text: "⚙️ Web Compiler [source code]",
+                            text: i18n.webCompiler,
                             url: "https://github.com/aver77/Web-compiler"
                         }
                     ],
                     [
                         {
-                            text: "🤖️ AI Chat [source code]",
+                            text: i18n.aiChat,
                             url: "https://github.com/aver77/hashbon-task"
                         }
                     ],
                     [
                         {
-                            text: "🛡️️ Insurance App [source code]",
+                            text: i18n.insuranceApp,
                             url: "https://github.com/aver77/p-24-dubai"
                         }
                     ],
                     [
                         {
-                            text: "😮‍💨 Hookah store",
+                            text: i18n.hookahStore,
                             web_app: { url: "https://silk-way-aver77s-projects.vercel.app/" }
                         }
                     ],
                     [
                         {
-                            text: "💼 Old portfolio on Next.js [source code]",
+                            text: i18n.oldPortfolio,
                             url: "https://github.com/aver77/next-portfolio"
                         }
                     ]
@@ -59,9 +62,4 @@ const listenToStartCommand = (bot) => {
             }
         });
     });
-};
-
-module.exports = {
-    START_COMMAND,
-    listenToStartCommand
 };
